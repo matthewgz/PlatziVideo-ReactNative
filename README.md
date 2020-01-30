@@ -2,7 +2,7 @@
 
 Este proyecto fue desarrollado únicamente para fines didácticos y educativos.
 
-![](https://s5.gifyu.com/images/ezgif.com-video-to-gifc54ad62380254f2e.gif)
+![Demo](demo/demo.gif)
 
 
 ## Install Dependencies
