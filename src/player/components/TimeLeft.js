@@ -5,7 +5,8 @@ const TimeLeft = ({ currentTime, duration }) => {
   return (
     <View>
       <Text style={styles.timer}>
-        {currentTime}/{duration}
+        {currentTime ? currentTime.toString().replace('.', ':') : '0:00'}/
+        {duration ? duration.toString().replace('.', ':') : '0:00'}
       </Text>
     </View>
   );

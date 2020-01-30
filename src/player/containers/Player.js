@@ -30,7 +30,7 @@ const Player = () => {
   };
 
   const playPause = () => {
-    setState({ paused: !state.paused });
+    setState({ ...state, paused: !state.paused });
   };
 
   const onProgress = playload => {

@@ -41,6 +41,7 @@ target 'platziVideoApp' do
 
 
 
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'platziVideoAppTests' do
