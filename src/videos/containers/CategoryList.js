@@ -1,16 +1,34 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 import Empty from '../components/Empty';
 import Separator from '../../sections/components/HorizontalSeparator';
 import Category from '../components/Category';
 import Layout from '../components/CategoryListLayout';
 import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
 
-const CategoryList = ({ list }) => {
+const CategoryList = ({ list, dispatch }) => {
   const renderEmpty = () => <Empty text="No hay sugerencias :C" />;
   const itemSeparator = () => <Separator />;
+  const viewCategory = item => {
+    dispatch(
+      NavigationActions.navigate({
+        routeName: 'Category',
+        params: {
+          genre: item.genres[0]
+        }
+      })
+    );
+  };
   const renderItem = ({ item }) => {
-    return <Category {...item} />;
+    return (
+      <Category
+        {...item}
+        onPress={() => {
+          viewCategory(item);
+        }}
+      />
+    );
   };
   const keyExtractor = item => item.id.toString();
 
@@ -30,7 +48,7 @@ const CategoryList = ({ list }) => {
 
 const mapStateToProps = state => {
   return {
-    list: state.categoryList
+    list: state.videos.categoryList
   };
 };
 

@@ -34,9 +34,6 @@ const Movie = ({ dispatch, movie }) => {
         opacity: state.opacity
       }}>
       <Layout>
-        <Header>
-          <Close onPress={closeVideo} />
-        </Header>
         <Player />
         <Details {...movie} />
       </Layout>
@@ -44,9 +41,23 @@ const Movie = ({ dispatch, movie }) => {
   );
 };
 
+Movie.navigationOptions = ({ navigation }) => {
+  return {
+    header: () => (
+      <Header>
+        <Close
+          onPress={() => {
+            navigation.goBack();
+          }}
+        />
+      </Header>
+    )
+  };
+};
+
 const mapStateToProps = state => {
   return {
-    movie: state.selectedMovie
+    movie: state.videos.selectedMovie
   };
 };
 

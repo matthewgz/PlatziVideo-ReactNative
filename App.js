@@ -5,12 +5,14 @@ import { store, persistor } from './Store';
 import Loading from './src/sections/components/Loading';
 
 import AppLayout from './src/AppLayout';
+import AppNavigatorWithState from './src/AppNavigatorWithState';
 
-const App = () => {
+const App = ({}) => {
   return (
     <Provider store={store}>
       <PersistGate loading={<Loading />} persistor={persistor}>
-        <AppLayout />
+        {/* <AppLayout /> */}
+        <AppNavigatorWithState />
       </PersistGate>
     </Provider>
   );

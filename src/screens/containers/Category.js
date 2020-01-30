@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
-import Layout from '../components/SuggestionListLayout';
-import Empty from '../components/Empty';
-import Separator from '../components/VerticalSeparator';
-import Suggestion from '../components/Suggestion';
+import Layout from '../../videos/components/SuggestionListLayout';
+import Empty from '../../videos/components/Empty';
+import Separator from '../../videos/components/VerticalSeparator';
+import Suggestion from '../../videos/components/Suggestion';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 
-class SuggestionsList extends Component {
+class Category extends Component {
   renderEmpty = () => <Empty text="No hay sugerencias :C" />;
   itemSeparator = () => <Separator />;
   viewMovie = item => {
@@ -37,7 +37,7 @@ class SuggestionsList extends Component {
 
   render() {
     return (
-      <Layout title="Recomendado para ti">
+      <Layout title={`${this.props.navigation.getParam('genre', 'Categoria')}`}>
         <FlatList
           keyExtractor={this.keyExtractor}
           data={this.props.list}
@@ -52,8 +52,8 @@ class SuggestionsList extends Component {
 
 const mapStateToProps = state => {
   return {
-    list: state.videos.suggestionList
+    list: state.videos.categoryList
   };
 };
 
-export default connect(mapStateToProps)(SuggestionsList);
+export default connect(mapStateToProps)(Category);

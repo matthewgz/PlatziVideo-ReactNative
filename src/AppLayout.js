@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Text } from 'react-native';
 import { connect } from 'react-redux';
 import Home from './screens/containers/home';
 import Header from './sections/components/Header';
