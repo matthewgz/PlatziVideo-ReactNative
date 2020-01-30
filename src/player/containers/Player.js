@@ -11,7 +11,7 @@ import FullScreen from '../components/FullScreen';
 const Player = () => {
   const [state, setState] = useState({
     loading: true,
-    pause: false,
+    paused: false,
     fullScreen: false,
     progress: 0.0,
     duration: 0.0,
@@ -69,7 +69,8 @@ const Player = () => {
       }>
       <Video
         source={{
-          uri: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+          // uri: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+          uri: 'https://clips-media-assets2.twitch.tv/AT-cm%7C256383487.mp4'
         }}
         style={styles.video}
         resizeMode="contain"
