@@ -1,8 +1,13 @@
+<div align="center">
+
 # PlatziVideo - React Native
 
 Este proyecto fue desarrollado únicamente para fines didácticos y educativos.
 
 ![Demo](demo/demo.gif)
+
+</div>
+
 
 
 ## Install Dependencies
